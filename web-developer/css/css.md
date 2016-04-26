@@ -42,7 +42,7 @@ box-sizing: content-box|border-box|inherit;
 
 2, flex布局: 父元素设置为flex容器.align-items: center,就会垂直居中.
 
-3, 如果是行内元素,子元素上设置: vertical-align: center, -- 无效
+3, 如果是行内元素,子元素上设置: vertical-align: center, -- 无效,待考证
 目前知道的就只有图片的情况下,图片的 vertical-align 属性会影响到文字的排列,默认是baseline.
 
 
