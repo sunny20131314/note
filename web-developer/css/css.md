@@ -39,6 +39,7 @@ box-sizing: content-box|border-box|inherit;
 ### 实现垂直居中
 1, position: 需要相对父元素垂直居中,父元素上设置position: relative.
 子元素设置position:absolute, top: 50%;margin-top: -height/2;
+当设置了position时，margin: 0 auto;（只有当是block时才有效，inline-block无效） 将失效。
 
 2, flex布局: 父元素设置为flex容器.align-items: center,就会垂直居中.
 
