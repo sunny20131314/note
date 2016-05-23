@@ -1,9 +1,10 @@
 ## css
-#### 目录:
-### 优雅降级 graceful degradation  渐进增强 progressive enhancement
-### 盒模式
-### 实现垂直居中
-### flex
+### 目录:
+1. 优雅降级 graceful degradation  渐进增强 progressive enhancement
+2. 盒模式
+3. 实现垂直居中
+4. flex
+5. 动画制作
 
 
 
@@ -111,3 +112,123 @@ box-sizing: content-box|border-box|inherit;
   6, align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。
   默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
    - align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+
+
+
+### 动效制作
+> transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行 旋转(rotate)、skew 扭曲、scale 缩放、 translate 移动 、matrix 矩阵变形五大特效
+> 
+> Transition 过渡：拥有修改执行变换的属性，时长，速率和延迟时间的能力，大家都很熟悉的贝塞尔曲线，也是归属于transition的设定之下的。
+> 
+> Animation 动画：若将Transform解释为动作，Transition解释为过渡，那么Animation则是连续的几个动作，即动画。Animation可以我们设定keyframes的值，让元素在一段时间内完成多个动作。
+> 
+> SVG，也是动效制作中不可忽略的一大热门方法，我们定义它为擅长于线条的动画，弊端是：IE8,Android4.2及以下支持不好。 
+　　知识普及：SVG，可缩放矢量图形(Scalable Vector Graphics) ，是被存成了XML格式的图像，它有一些特别的地方：
+　　1.可被多种工具读取和修改(比如记事本)
+　　尺寸更小，可压缩性更强
+　　矢量
+　　纯粹的 XML
+
+
+
+
+transform: 
+
+1. tranform属性
+
+	- rotate（°）
+	
+		1. -x： 是从点到右边。（比如是矩形沿着x轴旋转，矩形的y轴上的中线为旋转点---也就是矩形的上的x、y轴上的中点，x轴方向，顺时针旋转。）[实例x](http://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatex)
+		2. -y： 是从点到上边。（类似，沿着y轴旋转，矩形的x轴上的中线---也就是矩形的上的x、y轴上的中点，y轴方向，为旋转点，顺时针旋转。）[实例y](http://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatey)
+		3. -z： 是从点到前边。类似，沿着z轴旋转，矩形的x轴上的中线---也就是矩形的上的x、y轴上的中点，z轴方向，为旋转点，顺时针旋转。）[实例y](http://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatey)
+	
+	- translate（px,rem等单位）, scale（数字，放大缩小倍率）
+	这个就是在xyz轴上的相关位移，以相关中线（详细参考上方）为参照物。
+	- skew（d°）: 定义沿着 X 和 Y 轴的 2D 倾斜转换.注意默认情况下： 无论是哪个方向的skew倾斜转换，容器内的元素都是以左上点进行定位！！！[实例skewx,y](http://www.w3school.com.cn/tiy/t.asp?f=css3_transform_skew)
+		* skewX:  两条x轴方向的边a,c长度不变，旋转的角度d°是a、c中点的连线(即y轴方向的一条线)与y轴相交的角度。逆时针方向。
+		* skewY:  两条y轴方向的边b,d长度不变，旋转的角度d°是b、d中点的连线(即x轴方向的一条线)与x轴相交的角度。顺时针方向旋转。
+	为了方便调试，自己在本地写了个简单实例如下，请在chrome/safari下查看。
+	
+	```html
+	<!DOCTYPE html>
+	<html>
+	<meta charset="utf-8">
+	<title>
+	  transform skew:扭曲
+	</title>
+	<head>
+	  <style>
+	    body {
+	      padding: 200px;
+	      width: 500px;
+	      height: 400px;
+	    }
+	    div
+	    {
+	      width:100px;
+	      height:100px;
+	      border:1px solid black;
+	      background-color:yellow;
+	    }
+	    .red {
+	      width: 30px;
+	      height: 20px;
+	      background-color: red;
+	    }
+	    #div1 {
+	      background-color:blue;
+	      -webkit-transform:skew(0deg,70deg); /* Safari and Chrome */
+	    }
+	    #div2
+	    {
+	      background-color:blueviolet;
+	      -webkit-transform:skew(0deg,110deg); /* Safari and Chrome */
+	    }
+	
+	    #div3 {
+	      -webkit-transform:skew(70deg,0deg); /* Safari and Chrome */
+	    }
+	
+	    #div4 {
+	      background-color:yellowgreen;
+	      -webkit-transform:skew(110deg,0deg); /* Safari and Chrome */
+	    }
+	  </style>
+	</head>
+	<body>
+	
+	<div id="div1">
+	  YYYYYY +++++
+	  <div class="red">red</div>
+	</div>
+	
+	<div id="div2">
+	  YYYYYY -----
+	  <div class="red">red</div>
+	</div>
+	
+	<div id="div3">
+	  XXXXXX +++++
+	  <div class="red">red</div>
+	</div>
+	
+	<div id="div4">
+	  XXXXXX -----
+	  <div class="red">red</div>
+	</div>
+	
+	</body>
+	</html>
+	
+	```
+	- matrix： 定义 2D 转换，使用六个值的矩阵。
+	
+
+2. transform-origin 属性: 设置旋转元素的基点位置：[查看样例](http://www.w3school.com.cn/tiy/t.asp?f=css3_transform-origin)
+	- 0%，0% 的位置是以 左下角为参照点，默认是 50%，50%！
+3. transform-style 属性规定如何在 3D 空间中呈现被嵌套的元素。
+	- transform-style: flat（不保留其 3D 位置）|preserve-3d（保留其 3D 位置）;
+4. backface-visibility 属性定义当元素不面向屏幕时是否可见。
+如果在旋转元素不希望看到其背面时，该属性很有用。
+	- backface-visibility: visible|hidden;

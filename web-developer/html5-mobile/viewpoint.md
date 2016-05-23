@@ -24,6 +24,11 @@
   <meta content="black" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <meta content="email=no" name="format-detection">
+  
+  
+  <!--？？？-->
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
 
 ```
 
