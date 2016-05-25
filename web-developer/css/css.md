@@ -232,3 +232,9 @@ transform:
 4. backface-visibility 属性定义当元素不面向屏幕时是否可见。
 如果在旋转元素不希望看到其背面时，该属性很有用。
 	- backface-visibility: visible|hidden;
+
+
+
+
+## 参考：
+1. http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/（动画及渲染）
