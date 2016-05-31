@@ -44,20 +44,7 @@
 7. *[强制]*标签使用必须符合标签嵌套规则。
   > 比如 div 不得置于 p 中，tbody 必须置于 table 中。
 
-8. 技术不支持的时候使用备胎，如canvas
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Page title</title>
-  </head>
-  <body>
-    <img src="images/company-logo.png" alt="Company">
-    <h1 class="hello-world">Hello, world!</h1>
-  </body>
-</html>
-```
+8. 技术不支持的时候使用canvas,flash等
 
 ##页面结构如下所示：
 
@@ -360,6 +347,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 	 	- Ogg
 2. 在支持 HTML5 的浏览器中优先使用 audio 和 video 标签来定义音视频元素。
 3. 使用退化到插件的方式来对多浏览器进行支持。
+	
 	```html
 	<audio controls>
 	    <source src="audio.mp3" type="audio/mpeg">
@@ -379,6 +367,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 	```
 4. 只在必要的时候开启音视频的自动播放。
 5. 在 object 标签内部提供指示浏览器不支持该标签的说明。
+	
 	```html
 	<object width="100" height="50" data="something.swf">DO NOT SUPPORT THIS TAG</object>
 	```
@@ -387,41 +376,6 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 ##JavaScript 生成的标签
 通过 JavaScript 生成的标签让内容变得不易查找、编辑，并且降低性能。能避免时尽量避免。
 
-
-##模块化编写(将 HTML、CSS 解耦；模块化编码。)
-1. 语义化的模块名，通过模块名应该能一眼就看出模块的是干什么的。
-2. 模块内部的类名继承自父级。
-
-	```html
-	<div class="capacity-box">
-	   <h2 class="capacity-box-hd">About the Site</h2>
-	   <p class="capacity-box-bd">
-	This is my blog where I talk about only the bestest things in the whole wide world.
-	   </p>
-	</div>
-	```
-
- 上面的代码中，模块的名为 box，模块最外层使用 {命名空间}-{模块名} 的方式命名 Class。模块子元素以在此基础上进行命名。如果不继承父级的类名，很容易造成命名冲突。
-
-3. 充分考虑结构的语义化
-
-虽然在 Class 的命名上已经做到的了关注分离，编写样式不再依赖具体的元素名称，但仍应该考虑语义化，根据元素设计的目的来使用元素。是段落的，你就用` <p>`；是标题的，就用` <h1>~<h6>`；是引用的，就用 `<blockquote>`， 而不是简单粗暴的用 `<div>、<span>`。语义化的目的，一方面是抽去 CSS 以后，页面还是一个结构良好、可读的页面；另一方面，这也是 SEO 的最基本要求。
-
-4. 与 JS 交互时，在模块 HTML 结构的最外一层添加状态，而非给模块每个子元素单独添加元素。给最外层添加状态类以后，整个模块的样式都能控制，减少操作，提高性能。
-
-	```html
-	/* 推荐写法 */
-	<div class="capacity-box capacity-box-active">
-	   <h3 class="capacity-box-title"></h3>
-	   <p class="capacity-box-content"></p>
-	</div>
-	
-	/* 不推荐写法 */
-	<div class="capacity-box">
-	   <h3 class="capacity-box-title capacity-box-title-active"></h3>
-	   <p class="capacity-box-content capacity-box-content-active"></p>
-	</div>
-	```
 
 ##命名注意事项
 1. *[强制]*语义化，望文见义如 capacity-tab、capacity-nav，不要使用 red、left 等表象的词命名。即class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。
@@ -472,6 +426,41 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 用注释来解释代码：它包括什么，它的目的是什么，它能做什么，为什么使用这个解决方案，还是说只是因为偏爱如此呢？---增加项目的可维护性。
 
 没必要每份代码都描述的很充分，适当的解说。---注释贵精不贵多，这也可以让自己及他人看代码时，更快的理解思路。
+
+##模块化编写(将 HTML、CSS 解耦；模块化编码。)
+1. 语义化的模块名，通过模块名应该能一眼就看出模块的是干什么的。
+2. 模块内部的类名继承自父级。
+
+	```html
+	<div class="capacity-box">
+	   <h2 class="capacity-box-hd">About the Site</h2>
+	   <p class="capacity-box-bd">
+	This is my blog where I talk about only the bestest things in the whole wide world.
+	   </p>
+	</div>
+	```
+
+ 上面的代码中，模块的名为 box，模块最外层使用 {命名空间}-{模块名} 的方式命名 Class。模块子元素以在此基础上进行命名。如果不继承父级的类名，很容易造成命名冲突。
+
+3. 充分考虑结构的语义化
+
+虽然在 Class 的命名上已经做到的了关注分离，编写样式不再依赖具体的元素名称，但仍应该考虑语义化，根据元素设计的目的来使用元素。是段落的，你就用` <p>`；是标题的，就用` <h1>~<h6>`；是引用的，就用 `<blockquote>`， 而不是简单粗暴的用 `<div>、<span>`。语义化的目的，一方面是抽去 CSS 以后，页面还是一个结构良好、可读的页面；另一方面，这也是 SEO 的最基本要求。
+
+4. 与 JS 交互时，在模块 HTML 结构的最外一层添加状态，而非给模块每个子元素单独添加元素。给最外层添加状态类以后，整个模块的样式都能控制，减少操作，提高性能。
+
+	```html
+	/* 推荐写法 */
+	<div class="capacity-box capacity-box-active">
+	   <h3 class="capacity-box-title"></h3>
+	   <p class="capacity-box-content"></p>
+	</div>
+	
+	/* 不推荐写法 */
+	<div class="capacity-box">
+	   <h3 class="capacity-box-title capacity-box-title-active"></h3>
+	   <p class="capacity-box-content capacity-box-content-active"></p>
+	</div>
+	```
 
 
 ##模板中的 HTML
