@@ -597,12 +597,12 @@ var obj3 = {name: 'obj', age: 20, sex: 1};
 	typeof variable === 'undefined'
 	```
 
-2. 类型转换
+	2. 类型转换
 	- 转换成 string 时，使用 + ''。
 	- 转换成 number 时，通常使用 +。
 	- string 转换成 number，要转换的字符串结尾包含非数字并期望忽略时，使用 parseInt。
 	- 使用 parseInt 时，必须指定进制。
-
+		
 	```js
 	var width = '200px';
 	parseInt(width, 10);
