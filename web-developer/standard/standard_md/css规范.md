@@ -303,8 +303,9 @@
     /* Box-model */
     width: 100px;
     padding: 5px;
-    border: 1px solid #ddd;
-
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    
     /* Typography */
     font: normal 13px "Helvetica Neue", sans-serif;
     line-height: 1.5;
@@ -313,8 +314,6 @@
 
     /* Visual */
     background-color: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
 	-webkit-transition: color 1s;
 	       -moz-transition: color 1s;
             transition: color 1s;

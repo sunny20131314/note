@@ -3,7 +3,7 @@
 ##为何需要规范？
 
 1. 坚持一致原则
-	- 风格统一了，就有了一个共同思维的环境，参与者就可以专注的看你要说什么，而不是先想你是在说哪星球的语言。 
+	- 风格统一了，就有了一个共同思维的环境，参与者就可以专注的看你要说什么。 
 	- 团队永远遵循同一套编码规范，使代码风格保持一致，容易被理解和被维护。
 
 ### 约定
@@ -25,7 +25,7 @@
 	<input type="text" name="title" />
 	```
 	 
-5. *[强制]*对 HTML5 中规定允许省略的闭合标签，不允许省略闭合标签(对代码体积要求非常严苛的场景，可以例外。比如：第三方页面使用的投放系统。)
+5. *[强制]*对 HTML5 中规定允许省略的闭合标签，不允许省略闭合标签(对代码体积要求非常严苛的场景，可以例外。比如：第三方页面使用的投放系统。)（例如，`</li> 或 </body>`）。
 	
 	```html
 	<!-- good -->
@@ -40,7 +40,6 @@
 	    <li>second
 	</ul>
 	```
-6. *[强制]*不要省略可选的结束标签（closing tag）（例如，`</li> 或 </body>`）。
 7. *[强制]*标签使用必须符合标签嵌套规则。
   > 比如 div 不得置于 p 中，tbody 必须置于 table 中。
 
@@ -50,51 +49,49 @@
 
 ```html
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title></title>
 </head>
 <body>
-	<!--公共头部-->
-    <div id="header">
-    </div>
+<!--公共头部-->
+<div id="header"></div>
 
-    <!--内容区-->
-    <div id="content">
+<!--内容区-->
+<div id="content">
 
-        <!--一个横向布局-->
-        <div class="layout">
+  <!--一个横向布局-->
+  <div class="layout">
 
-            <!--一个模块-->
-            <div class="mod-xx">
-                <!--模块头-->
-                <div class="mod-header">
-                </div>
-                <!--模块内容区-->
-                <div class="mod-content">
+    <!--一个模块-->
+    <div class="mod-xx">
 
-                    <!--可以将内容划分为多个part-->
-                    <div class="part-yy1">
-                    </div>
-                    <div class="part-yy2">
-                    </div>
+      <!--模块头-->
+      <div class="mod-header"></div>
 
-                </div>
-                <!--模块底部-->
-                <div class="mod-footer">
-                </div>
-            </div>
+      <!--模块内容区-->
+      <div class="mod-content">
+        <!--可以将内容划分为多个part-->
+        <div class="part-yy1"></div>
+        <div class="part-yy2"></div>
+      </div>
 
-        </div>
+      <!--模块底部-->
+      <div class="mod-footer"></div>
 
     </div>
+  </div>
 
-    <!--公共底部-->
-    <div id="footer">
-    </div>
+</div>
+
+<!--公共底部-->
+<div id="footer"></div>
+
 </body>
 </html>
+
 ```
 * *[强制]*`页面整体` 分为 `公共头部`， `内容区`， `公共底部`三大块；
 * *[强制]*`内容区`中包含`布局（layout）`，可以包含多个`布局`；
@@ -141,21 +138,22 @@
 	</html>
 	```
 
-4.  *[强制]*IE 兼容模式
-IE 支持通过特定的 <meta> 标签来确定绘制当前页面所应该采用的 IE 版本。除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。
+4.  *[强制]* IE 兼容模式
+IE 支持通过特定的 <meta> 标签来确定绘制当前页面所应该采用的 IE 版本。除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。[点这里看具体](http://www.cnblogs.com/nidilzhang/archive/2010/01/09/1642887.html)。
 
 	```html
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	```
 5. [建议] 在 head 中引入页面需要的所有 CSS 资源。 ----在页面渲染的过程中，新的CSS可能导致元素的样式重新计算和绘制，页面闪烁。
 6. [建议]JavaScript 应当放在页面末尾，或采用异步加载。----将 script 放在页面中间将阻断页面的渲染。出于性能方面的考虑，如非必要，请遵守此条建议。
+
 	```html
 	<body>
 	    <!-- a lot of elements -->
 	    <script src="init-behavior.js"></script>
 	</body>
 	```
-7. 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀。
+7. 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀。 
 	- 嵌入式资源书写省略协议头
 	- 省略图像、媒体文件、样式表和脚本等URL协议头部声明 ( http: , https: )。如果不是这两个声明的URL则不省略。
 	- 省略协议声明，使URL成相对地址，防止内容混淆问题和导致小文件重复下载。
@@ -533,3 +531,4 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 1. http://codeguide.bootcss.com/
 2. https://github.com/fex-team/styleguide/blob/master/html.md
 3. http://www.impng.com/web-dev/html-tags-without-self-closing.html
+4. http://www.cnblogs.com/nidilzhang/archive/2010/01/09/1642887.html
