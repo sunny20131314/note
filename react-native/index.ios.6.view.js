@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import RouteComponent from './ARouteComponent';
 
-class AwesomeProject extends Component {
+class MyApp1101 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,9 +27,12 @@ class AwesomeProject extends Component {
       }}>
         <View style={{backgroundColor: 'blue', flex: 0.3}} />
         <View style={{backgroundColor: 'red', flex: 0.7}} />
+        <Text>
+          MyApp111
+        </Text>
       </View>
     )
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('AwesomeProject', () => MyApp1101);

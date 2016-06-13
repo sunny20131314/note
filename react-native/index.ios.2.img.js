@@ -4,6 +4,7 @@
  * @flow
  *
  * 图片相关
+ * 一个用于显示多种不同类型图片的React组件，包括网络图片、静态资源、临时的本地图片、以及本地磁盘上的图片（如相册）等。
  */
 
 'use strict'; //开启 Strict Mode
@@ -34,12 +35,29 @@ class AwesomeProject extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require('./img/img.png')}
-        >
-          <Text style={styles.red}>
-            Inside
-          </Text>
-        </Image>
+          style={styles.logo}
+          defaultSource={require('./img/img.png')}
+          source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
+          onLayout={(e) => {
+            // 当元素挂载或者布局改变的时候调用
+            //参数:{nativeEvent: {layout: {x, y, width, height}}}.
+            console.log(e.nativeEvent.lalayoutyout)
+          }}
+
+          onLoadEnd={() => {
+            // onLoadEnd : 加载结束后，不论成功还是失败，调用此回调函数。
+            console.log('done');
+          }}
+          onLoad={() => {
+            // 加载成功完成时调用此回调函数。
+            console.log('success');
+          }}
+          onLoadStart={() => {
+            // 加载开始时调用。
+            console.log('start');
+          }}
+          resizeMode='contain'
+        />
         <Image
           source={require('./img/check.png')}
           style={styles.thumbnail}
@@ -60,11 +78,9 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
   thumbnail: {
-    alignSelf: 'center',
     width: 53,
     height: 81
   },
@@ -72,8 +88,18 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     color: 'red',
     backgroundColor: 'transparent'
+  },
+  logo: {
+    width: 400,
+    height: 500,
+    borderColor: '#0af',
+    borderWidth: 10,
+    borderRadius: 100,
+    backgroundColor: '#000',
+    //tintColor: '#00f',
+    opacity: .4
   }
 });
 
 // AppRegistry 定义了App的入口，并提供了根组件。
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+//AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);

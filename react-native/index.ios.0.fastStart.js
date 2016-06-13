@@ -49,7 +49,7 @@ import ReactNative, {
 //AwesomeProject 继承了 React.Component（React UI的基础模块）。
 // 组件包含着不可变的属性，可变的状态变量以及暴露给渲染用的方法。
 // 这会你做的应用比较简单，只用一个渲染方法就可以啦。
-class AwesomeProject extends Component {
+export default class AwesomeProject extends Component {
 
   // constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。
   // 一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。
@@ -69,7 +69,11 @@ class AwesomeProject extends Component {
     // ListView 中 dataSource接口: 在ListView的整个更新过程中判断哪些数据行发生了变化。
     this.state = {
       dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2
+        rowHasChanged: (row1, row2) => {
+          console.log(row1);
+          console.log(row2);
+          row1 !== row2;
+        }
       }),
       loaded: false,
       fontRed: true
@@ -82,6 +86,7 @@ class AwesomeProject extends Component {
     //autoPlay: false,
     //maxLoops: 10
   };  // 注意这里有分号
+
   static propTypes = {
     style: View.propTypes.style
   };  // 注意这里有分号
@@ -192,4 +197,4 @@ const styles = StyleSheet.create({
 });
 
 // AppRegistry 定义了App的入口，并提供了根组件。
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+//AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
