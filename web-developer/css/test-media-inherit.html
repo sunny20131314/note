@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test jquery</title>
+  <link rel="stylesheet" href="#">
+  <style>
+    img {
+      width: 180px;
+      height: 20px;
+      background-color: #ffbbbb;
+    }
+    p {
+      height: auto;
+      word-break: break-all;
+      border: 1px solid #fff;
+    }
+    @media screen and (min-width: 0px ) and (max-width: 480px) {
+      body {
+        background-color: lightgreen;
+      }
+      .parent {
+        background-color: #33b5e5;
+      }
+
+    }
+    @media screen and (min-width: 480px) {
+      body {
+        background-color: red;
+      }
+      .parent {
+        background-color: #ffbbbb;
+      }
+    }
+  </style>
+  <style>
+    /*三列全部自适应*/
+    body{
+      margin:0;
+      padding:0;
+      line-height: 1.5em;
+    }
+    b{font-size: 110%;}
+    em{color: red;}
+    #topsection{
+      background: #EAEAEA;
+      height: 90px;
+    }
+    #topsection h1{
+      margin: 0;
+      padding-top: 15px;
+    }
+    #columnwrapper{
+      float: left;
+      width: 100%;
+    }
+    #rightcolumn{
+      margin: 0 62% 0 20%; background: green;
+    }
+    #leftcolumn{
+      float: left;
+      width: 20%;
+      margin-left: -100%;
+      background: skyblue;
+    }
+    #contentcolumn{
+      float: left;
+      width: 62%;
+      margin-left: -62%;
+      background: #EEE;
+    }
+    #footer{
+      clear: left;
+      width: 100%;
+      background: black;
+      color: #FFF;
+      text-align: center;
+      padding: 4px 0;
+    }
+    #footer a{
+      color: #FFFF00;
+    }
+    .innertube{
+      margin: 10px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <p>想要实现的效果, 右侧图片高度,宽度确定, 左侧文字宽高自适应, 容器高度自适应</p>
+    <div>
+      <img style="float:right;" src="" alt="图片外,有效">
+      <p style="overflow:hidden">
+        <img style="float:right;" src="" alt="图片内">
+        测试是否自适应!!!blablablablabl ablablablablablablablablabl ablablablablablablab lablablablablablablab lablablablablablablablablablablablablablablablablablablablablablablablablablabla
+      </p>
+    </div>
+  </div>
+
+  <div id="maincontainer">
+    <div id="columnwrapper">
+      <div id="rightcolumn">
+        <div class="innertube"><b>Right Column: <em>Fluid (18%)</em></b></div>
+      </div>
+    </div>
+    <div id="leftcolumn">
+      <div class="innertube"><b>请双击标题栏让窗口变小看效果。<em>20%</em></b></div>
+    </div>
+    <div id="contentcolumn">
+      <div class="innertube"><b>主体内容: <em>62%</em></b></div>
+    </div>
+    <div id="footer"><a href="#">www.codesc.net</a></div>
+  </div>
+
+</body>
+</html>
