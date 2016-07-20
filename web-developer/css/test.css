@@ -1,0 +1,28 @@
+img {
+  width: 180px;
+  height: 20px;
+  background-color: #ffbbbb;
+}
+p {
+  height: auto;
+  word-break: break-all;
+  border: 1px solid #fff;
+}
+
+/*@media screen and (min-width: 0px ) and (max-width: 480px) {*/
+  body {
+    background-color: lightgreen;
+  }
+  .parent {
+    background-color: #33b5e5;
+  }
+
+/*}*/
+/*@media screen and (min-width: 480px) {*/
+  /*body {*/
+    /*background-color: red;*/
+  /*}*/
+  /*.parent {*/
+    /*background-color: #ffbbbb;*/
+  /*}*/
+/*}*/
