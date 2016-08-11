@@ -62,32 +62,37 @@ HTTP协议详解：
 
 所有HTTP响应 Response 消息中的第一行叫做状态行，由HTTP协议版本号， 状态码(3位数字组成的)， 状态消息 (彼此由空格分隔)三部分组成。  eg: `HTTP/1.1 200 OK`
 
-状态代码的第一个数字代表当前响应的类型：
+[状态代码的第一个数字代表当前响应的类型：](http://tool.oschina.net/commons?type=5)
 
-1xx消息——请求已被服务器接收，继续处理                           
+1xx消息——请求已被服务器接收、理解，继续处理                           
 2xx成功——请求已成功被服务器接收、理解、并接受 200
 3xx重定向——需要后续操作才能完成这一请求 
 4xx请求错误——请求含有词法错误或者无法被执行 404
 5xx服务器错误——服务器在处理某个正确请求时发生错误
 
-	200 OK 
+
+```
+http协议的状态码
+200 OK 
 	请求被成功地完成，所请求的资源发送回客户端
-	302 Found 
+206 断点续传
+	服务器成功处理了部分 GET 请求。
+	一般表示断点续传.
+302 Found 
 	重定向，新的URL会在response中的Location中返回，浏览器将会使用新的URL发出新的Request
-	304 Not Modified 
+304 Not Modified 
 	文档已经被缓存，直接从缓存调用
-	400 Bad Request 
+400 Bad Request 
 	客户端请求与语法错误，不能被服务器所理解 
-	403 Forbidden 
+403 Forbidden 
 	服务器收到请求，但是拒绝提供服务 
-	404 Not Found 
+404 Not Found 
 	请求资源不存在
-	500 Internal Server Error 
+500 Internal Server Error 
 	服务器发生了不可预期的错误 
-	503 Server Unavailable 
+503 Server Unavailable 
 	服务器当前不能处理客户端的请求，一段时间后可能恢复正常
-
-
+```
 
 ## <a name="getOrPost">  GET 还是 POST？</a>(ps: 另见 ajax)
 http协议定义了很多与服务器交互的方法，最基本的有4种，分别是GET,POST,PUT,DELETE。 一个URL地址用于描述一个网络上的资源，而HTTP中的GET, POST, PUT, DELETE 就对应着对这个资源的查，改，增，删4个操作。 我们最常见的就是GET和POST了。GET一般用于获取/查询资源信息，而POST一般用于更新资源信息.

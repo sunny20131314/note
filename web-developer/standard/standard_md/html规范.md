@@ -57,29 +57,29 @@
 </head>
 <body>
 <!--公共头部-->
-<div id="header"></div>
+<div class="first-page-header"></div>
 
 <!--内容区-->
-<div id="content">
+<div class="first-page-content">
 
   <!--一个横向布局-->
-  <div class="layout">
+  <div class="news-layout">
 
     <!--一个模块-->
-    <div class="mod-xx">
+    <div class="news-xx">
 
       <!--模块头-->
-      <div class="mod-header"></div>
+      <div class="xx-header"></div>
 
       <!--模块内容区-->
-      <div class="mod-content">
+      <div class="xx-content">
         <!--可以将内容划分为多个part-->
         <div class="part-yy1"></div>
         <div class="part-yy2"></div>
       </div>
 
       <!--模块底部-->
-      <div class="mod-footer"></div>
+      <div class="xx-footer"></div>
 
     </div>
   </div>
@@ -87,7 +87,7 @@
 </div>
 
 <!--公共底部-->
-<div id="footer"></div>
+<div class="first-page-footer"></div>
 
 </body>
 </html>
