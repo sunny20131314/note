@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>center-center</title>
+  <style type="text/css">
+    /*method1*/
+    .div1{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000000;
+    }
+    .div2{
+      width:40px ;
+      height: 40px;
+      background-color: green;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    /*method2*/
+    /*margin设为四边auto left、top、bottom、right设为0 浏览器会对绝对定位的容器margin：auto自动识别*/
+    .div3{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000000; }
+    .div4{
+      position: absolute;
+      left: 0; top: 0; right: 0; bottom: 0; /*这个值会相对于中间的位置移动*/
+      width:40px ;
+      height: 40px;
+      margin: auto;
+      background-color: green;
+    }
+    /*method3*/
+    .div5{ width: 100px;
+      height: 100px;
+      border: 1px solid #000000;
+      vertical-align:middle;
+      display:table-cell;
+    }
+    .div6{
+      width:40px;
+      margin:0 auto;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 让div even 相对于div odd 水平垂直居中 -->
+<div class="div1">
+  <div class="div2">
+  </div>
+</div>
+
+<div class="div3">
+  <div class="div4">
+  </div>
+</div>
+
+<div class="div5">
+  <div class="div6">11范德萨发的发</div>
+</div>
+</body>
+</html>
