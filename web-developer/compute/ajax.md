@@ -83,7 +83,7 @@ readyState: 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
 
 status:
 	
-	放进笔记200: "OK"
+	200: "OK"
 	404: 未找到页面
 
 
