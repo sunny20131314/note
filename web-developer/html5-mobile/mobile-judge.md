@@ -29,6 +29,11 @@ if(window.ActiveXObject)
 ```
 
 ### 判断移动终端，pc, 浏览器
+
+[淘宝的识别设备](http://m.sui.taobao.org/components/#device)
+
+~/Documents/workspace/lib/SUI-Mobile/js/device.js
+
 ``` javascript
 //判断访问终端
 var browser={
