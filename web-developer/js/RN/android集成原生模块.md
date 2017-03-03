@@ -29,7 +29,8 @@ import com.facebook.react.bridge.ReactMethod;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
 
-// tip1: 创建一个原生模块， 继承自 ReactContextBaseJavaModule 的java类，可以实现一些 JS 所需的功能. eg: setBadge
+// tip1: 创建一个原生模块， 继承自 ReactContextBaseJavaModule 的java类，
+// 可以实现一些 JS 所需的功能. eg: setBadge
 public class BadgeModule extends ReactContextBaseJavaModule {
 
   private Context context;
@@ -41,17 +42,20 @@ public class BadgeModule extends ReactContextBaseJavaModule {
   }
 
 // tip2: ReactContextBaseJavaModule要求派生类实现getName方法。
-//       这个函数用于返回一个字符串名字，这个名字在JavaScript端标记这个模块。这里我们把这个模块叫做 BadgeAndroid.
+//       这个函数用于返回一个字符串名字，这个名字在JavaScript端标记这个模块。
+//       这里我们把这个模块叫做 BadgeAndroid.
 //       这样就可以在JavaScript中通过React.NativeModules.BadgeAndroid 访问到这个模块。
 
 // 译注：模块名前的RCT前缀会被自动移除。
-//       所以如果返回的字符串为"RCTToastAndroid"，在JavaScript端依然通过React.NativeModules.ToastAndroid访问到这个模块。
+//       所以如果返回的字符串为"RCTToastAndroid"，
+//       在JavaScript端依然通过React.NativeModules.ToastAndroid访问到这个模块。
   @Override
   public String getName() {
     return "BadgeAndroid";
   }
   
-// tips:  一个可选的方法getContants返回了需要导出给JavaScript使用的常量。它并不一定需要实现，但在定义一些可以被JavaScript同步访问到的预定义的值时非常有用。
+// tips:  一个可选的方法getContants返回了需要导出给JavaScript使用的常量。
+//       它并不一定需要实现，但在定义一些可以被JavaScript同步访问到的预定义的值时非常有用。
 
  @Override
   public Map<String, Object> getConstants() {
@@ -92,7 +96,10 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.*;  // 等同于 import java.util.ArrayList;  // ++import java.util.Collections; // ++import java.util.List;
 public class BadgePackage implements ReactPackage {
 
-// tip4: 注册模块: 在Java这边要做的最后一件事就是注册这个模块。我们需要在应用的Package类的createNativeModules方法中添加这个模块。如果模块没有被注册，它也无法在JavaScript中被访问到。
+// tip4: 注册模块: 在Java这边要做的最后一件事就是注册这个模块。
+//       我们需要在应用的Package类的createNativeModules方法中添加这个模块。
+//       如果模块没有被注册，它也无法在JavaScript中被访问到。
+
 //       这个package需要在 MainApplication.java 文件的getPackages方法中提供。 android/app/src/main/java/com/your-app-name/MainApplication.java.
 //       getPackages: new BadgePackage()
 
