@@ -99,7 +99,8 @@ for (var i = 0; i < 5; i++) {
 
 
 ##  Promise
-promise 会在当前tick的最后添加, 而setTimeout会添加在任务队列后面，下一个tick
+Promise 会在当前tick的最后添加, 而setTimeout会添加在当前任务队列的后面，即下一个tick
+Promise介绍具体查看 ../es6/Promise.md
 
 ```js
 setTimeout(function() {
