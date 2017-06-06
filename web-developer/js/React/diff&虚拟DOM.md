@@ -6,8 +6,10 @@
 
 
 源码位置：
-react/src/renderers/shared/stack/reconciler
- 
+react/src/renderers/shared/stack/reconciler/ReactMultiChild.js
+主要参考源码： `_updateChildren` 部分
+
+
 ### diff 策略：
 
 1. Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。
