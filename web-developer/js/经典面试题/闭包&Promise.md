@@ -2,16 +2,6 @@
 
 [TOC]
 
-## for
-最简单for循环，直接执行。
-
-```js
-for (var i = 0; i < 5; i++) {
-  console.log(i);
-}
-// 0,1,2,3,4
-```
-
 ## setTimeout
 setTimeout(function[|string], number, ...args)
 第一个参数 可以接收字符串 or function
