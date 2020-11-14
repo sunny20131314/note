@@ -6,3 +6,28 @@
 
 # 忽略私有文件 private
 private
+web-developer/todo
+web-developer/js/React/sourceCode/VirtualDom/My-wheels
+web-developer/js/React/sourceCode/react-wheel
+
+# dependencies
+/node_modules
+web-developer/js/React/sourceCode/VirtualDom/VirtualDomMockCode/node_modules
+web-developer/js/React/sourceCode/react-wheel/node_modules
+
+# production
+/build
+/dist
+
+# misc
+.pro-scripts/
+.idea/
+.happypack
+.DS_Store
+.vscode
+
+# log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

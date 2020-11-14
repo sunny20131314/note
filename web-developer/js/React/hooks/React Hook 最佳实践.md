@@ -4,7 +4,10 @@
 
 > 在调用 setState 后，React 将重新执行 render 函数，仅此而已。
 
+- [React中官文： hooks](https://zh-hans.reactjs.org/docs/hooks-reference.html#usedebugvalue)
 ## todo 
+- [React Hooks 实践思考](https://github.com/HolyZheng/holyZheng-blog/issues/49)
+- [React Hooks踩坑分享](https://www.infoq.cn/article/yQEtdq5xUPPO1ZwghSVw?utm_source=related_read_bottom&utm_medium=article)
 - [ ] immer
 - [ ] hooks 源码实现
 - [ ] 不明白为何会在调用setState后，会重新执行当前FC/C， 底层是怎么实现的，如何挂载上去的
@@ -25,6 +28,10 @@ useEffect/useCallback/useMemo，对于 state 或者其他属性的依赖，根�
 
 当这些方法都不奏效，使用 ref，但是依然要谨慎操作。
 
+### hooks dependencies
+1. 无: 每次都会触发
+2. []: 初始化时
+2. [a]: a更改时: note: 浅对比
 
 ### all hooks
 #### memo => pureComponent
