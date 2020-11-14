@@ -1,5 +1,6 @@
 # 忽略所有的
 .DS_Store
+package-lock.json
 
 # 忽略所有的 .idea/ 文件
 .idea
