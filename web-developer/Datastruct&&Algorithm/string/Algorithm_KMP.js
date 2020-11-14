@@ -1,5 +1,5 @@
 // 查找主串 sStr, 子串 tStr是否匹配
-function match(sStr, tStr) {
+function matchKMP(sStr, tStr) {
   const targetList = getTargetList(tStr);
 
   const sStrLen = sStr.length;
@@ -61,6 +61,7 @@ function getTargetList(tStr) {
     if (suffix < 0 || tStr[preffix] === tStr[suffix]) {
       preffix++;
       suffix++;
+      // note: 设置的是匹配失败时，回溯的位置
       targetList[preffix] = suffix;
     } else {
       suffix = targetList[suffix];
@@ -70,4 +71,4 @@ function getTargetList(tStr) {
   return targetList;
 }
 
-module.exports = { match, getTargetList };
+module.exports = { matchKMP, getTargetList };
