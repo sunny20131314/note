@@ -1,7 +1,7 @@
 var { matchBF } = require('../../web-developer/Datastruct&&Algorithm/string/Algorithm_BF');
 var expect = require('chai').expect;
 
-describe.only('字符串匹配BF算法测试', function () {
+describe('字符串匹配BF算法测试', function () {
   it('matchBF', function () {
     expect(matchBF('aaadaaac', 'a')).to.be.equal(true);
     expect(matchBF('aaadaaac', 'aa')).to.be.equal(true);
