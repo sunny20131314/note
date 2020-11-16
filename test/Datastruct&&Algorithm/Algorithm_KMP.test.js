@@ -5,8 +5,8 @@ var {
 var expect = require('chai').expect;
 
 describe('字符串匹配KMP算法测试', function () {
-  it.skip('getTargetList', function () {
-    expect(getTargetList('aaac').join('')).to.be.equal('-1012');
+  it('getTargetList', function () {
+    expect(getTargetList('aaac').join('')).to.be.equal('-1-1-12');
   });
   it('matchKMP', function () {
     expect(matchKMP('aaadaaac', 'a')).to.be.equal(true);

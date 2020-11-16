@@ -61,8 +61,28 @@ function getTargetList(tStr) {
     if (suffix < 0 || tStr[preffix] === tStr[suffix]) {
       preffix++;
       suffix++;
-      // note: 设置的是匹配失败时，回溯的位置
-      targetList[preffix] = suffix;
+
+      // note: 改良版 version: 2, 当前匹配处与回溯处值相同时，可直接不用对比啦
+      // note: 从前往后每个位置都记录了应当回溯的位置，所以只要往前找一位
+      if (tStr[preffix] === tStr[suffix]) {
+        targetList[preffix] = targetList[suffix];
+      } else {
+        // note: 设置的是匹配失败时，回溯的位置
+        targetList[preffix] = suffix;
+      }
+      // 思路和上面差不多，达到的效果和上一样，加了多余不必要的逻辑（多次相等的情况）
+      // function elseFn() {
+      //   // while 循环每次都只执行了一次
+      //   let preSuffixStr = tStr[preffix],
+      //     nextSuffixStr = tStr[suffix];
+      //   // 当字符相等时, 找到下一个应该匹配的位置
+      //   // 当前匹配处与回溯处值相同时，可直接不用对比啦，直接根据next回溯
+      //   while (preSuffixStr === nextSuffixStr) {
+      //     preSuffixStr = nextSuffixStr;
+      //     suffix = targetList[suffix];
+      //     nextSuffixStr = tStr[suffix];
+      //   }
+      // }
     } else {
       suffix = targetList[suffix];
     }
