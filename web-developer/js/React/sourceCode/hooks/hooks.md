@@ -20,7 +20,6 @@ mountWorkInProgressHook 创建`Hooks链表`:，并把其挂在链表上
 #### 循环链表： `queue链表`
   - 存放每次的更新（历史更新操作）
   - 每次我们调用dispatchAction方法的时候，就会形成一个新的updata对象，添加到queue链表上，而且这个是一个循环链表。
-  - 
 
 note: 每一个hook节点都有其 queue循环链表
 
@@ -111,7 +110,7 @@ function commitHookEffectList(unmountTag,mountTag,finishedWork) {
 - [React 源码解析 ---> 如何在自己的项目中运行自己编译的react](https://blog.csdn.net/qq_32281471/article/details/94968617?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.compare)
   - 与上配合使用，方便自己修改react源码
 
-- [🍼holyZhengs ---> 提供 hooks 总思路](https://juejin.im/post/6844904080758800392)
+- [🍼holyZhengs ---> 提供 hooks 总思路](https://juejin.cn/post/6844904080758800392#heading-10)
 
 - [react源码学习一之ReactChildren.js & 源码断点调试 ---> 作者画了流程图](https://blog.csdn.net/royasongsong/article/details/106874428)
   - [剖析 React 源码 ---> 解析：createElement/ReactBaseClasses/Refs/ReactChildren](https://juejin.im/post/6844903829704540174)
